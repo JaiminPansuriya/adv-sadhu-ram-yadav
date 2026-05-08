@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description"
+        content="Adv. Sadhu Ram Yadav - Senior Advocate & Legal Consultant. Premier expertise in Cyber Law, Criminal Law & Civil Law across Rajasthan.">
+    <title>Adv. Sadhu Ram Yadav | Senior Advocate | Responsive</title>
+
+    <!-- Favicon (SY logo) -->
+    <link rel="icon" type="image/png"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='black'/%3E%3Ctext x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Playfair Display, serif' font-size='32' fill='white' font-weight='bold'%3ESY%3C/text%3E%3C/svg%3E">
+    <!-- Tailwind + Fonts + Icons (optimized CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind custom overrides without breaking responsiveness -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .premium-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .premium-card:hover {
+            border-color: #64748b;
+            transform: translateY(-8px);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-circle {
+            width: 85px;
+            height: 85px;
+            border: 2px solid #cbd5e1;
+            transition: all 0.4s ease;
+        }
+
+        .premium-card:hover .icon-circle {
+            border-color: #1e2937;
+            background: #f1f5f9;
+            transform: scale(1.05);
+        }
+
+        .nav {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .achievement-number {
+            font-size: 3.8rem;
+            line-height: 1;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #1e2937;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-menu {
+            animation: fadeInDown 0.2s ease forwards;
+        }
+
+        /* ADVOCATE IMAGE CONTAINER - fully responsive */
+        .advocate-image-container {
+            position: relative;
+            border: 4px solid #1e2937;
+            border-radius: 1.5rem;
+            background: #fff;
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            max-width: 100%;
+        }
+
+        .advocate-image-container img {
+            border-radius: 1.25rem;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gavel-badge {
+            position: absolute;
+            bottom: -16px;
+            right: -16px;
+            background: #1e2937;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            border: 3px solid white;
+            transition: transform 0.2s ease;
+        }
+
+        /* Education Timeline - fully responsive with connected dots */
+        .education-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Vertical line connecting dots - desktop */
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #1e2937, #64748b, #1e2937);
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .education-timeline::before {
+                display: block;
+            }
+        }
+
+        /* Mobile vertical line */
+        .education-timeline::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #1e2937, #64748b, #1e2937);
+            left: 30px;
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .education-timeline::after {
+                display: none;
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            width: 24px;
+            height: 24px;
+            background: #1e2937;
+            border: 4px solid #f8fafc;
+            box-shadow: 0 0 0 4px rgba(30, 41, 59, 0.3);
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        /* .timeline-dot::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(30, 41, 59, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite;
+        } */
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+        }
+
+        /* Desktop: alternate left and right */
+        @media (min-width: 768px) {
+            .timeline-item {
+                display: flex;
+                width: 100%;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: auto;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-right: auto;
+                text-align: right;
+            }
+
+
+        }
+
+        .timeline-content {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            flex: 1;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #64748b;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: #1e2937;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+
+
+        /* Mobile layout */
+        @media (max-width: 767px) {
+            .timeline-item {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .timeline-content {
+                flex: 1;
+                max-width: none;
+            }
+
+        }
+
+        /* testimonials scroll - mobile friendly */
+        .testimonial-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .testimonial-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            padding-bottom: 0.5rem;
+        }
+
+        .testimonial-card {
+            min-width: 300px;
+            width: 300px;
+        }
+
+        @media (min-width: 640px) {
+            .testimonial-card {
+                min-width: 340px;
+                width: 340px;
+            }
+        }
+
+        /* fixing contact grid on small */
+        .contact-grid-fix {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid-fix {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* prevent horizontal overflow */
+        img,
+        iframe,
+        svg,
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .max-w-restricted {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* footer responsiveness */
+        @media (max-width: 640px) {
+            .achievement-number {
+                font-size: 2.8rem;
+            }
+
+            .icon-circle {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Auto Scroll Marquee */
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 35s linear infinite;
+            width: max-content;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .testimonial-wrapper {
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        /* Pause on hover */
+        .testimonial-wrapper:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        /* Responsive speed adjustment */
+        @media (max-width: 640px) {
+            .animate-marquee {
+                animation-duration: 25s;
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- NAVIGATION - fully responsive with mobile menu drawer instead of alert -->
+    <nav class="nav fixed w-full z-50 py-4 md:py-5">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 flex justify-between items-center">
+            <div class="flex items-center gap-x-3 md:gap-x-4">
+                <div
+                    class="w-10 h-10 md:w-12 md:h-12 bg-black rounded-2xl flex items-center justify-center text-white text-2xl md:text-3xl font-bold">
+                    SY</div>
+                <div
+                    class="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight heading-font text-black leading-tight">
+                    Adv. Sadhu Ram Yadav</div>
+            </div>
+            <!-- desktop menu -->
+            <div class="relative hidden md:block">
+                <button id="menuBtn"
+                    class="flex items-center gap-x-2 px-5 py-2.5 border border-black hover:bg-black hover:text-white rounded-full text-sm font-semibold transition-all">
+                    <span>Menu</span>
+                    <i class="fa-solid fa-chevron-down text-xs transition-transform" id="chevron"></i>
+                </button>
+                <div id="dropdownMenu"
+                    class="dropdown-menu hidden absolute right-0 mt-3 w-64 bg-white border border-gray-200 rounded-2xl shadow-xl py-3 z-50 text-gray-800">
+                    <a href="#home" class="block px-6 py-3 hover:bg-gray-100 transition">Home</a>
+                    <a href="#about" class="block px-6 py-3 hover:bg-gray-100 transition">Profile</a>
+                    <a href="#education" class="block px-6 py-3 hover:bg-gray-100 transition">Education</a>
+                    <a href="#practice" class="block px-6 py-3 hover:bg-gray-100 transition">Practice Areas</a>
+                    <a href="#services" class="block px-6 py-3 hover:bg-gray-100 transition">Services</a>
+                    <a href="#achievements" class="block px-6 py-3 hover:bg-gray-100 transition">Achievements</a>
+                    <a href="#testimonials" class="block px-6 py-3 hover:bg-gray-100 transition">Testimonials</a>
+                    <a href="#faqs" class="block px-6 py-3 hover:bg-gray-100 transition">FAQs</a>
+                    <a href="#contact" class="block px-6 py-3 hover:bg-gray-100 transition">Contact</a>
+                </div>
+            </div>
+            <!-- mobile menu button + sidebar drawer (replaces alert) -->
+            <button id="mobileMenuToggle" class="md:hidden text-3xl text-black focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile drawer overlay -->
+        <div id="mobileDrawer"
+            class="fixed top-0 left-0 w-full h-full bg-black/50 z-50 hidden transition-all duration-300"
+            style="backdrop-filter: blur(4px);">
+            <div
+                class="bg-white w-4/5 max-w-xs h-full shadow-2xl p-6 flex flex-col gap-5 overflow-y-auto transform transition-transform">
+                <div class="flex justify-between items-center border-b pb-4">
+                    <span class="text-xl font-bold heading-font">Menu</span>
+                    <button id="closeDrawer" class="text-2xl">&times;</button>
+                </div>
+                <div class="flex flex-col gap-4 text-gray-800 text-lg">
+                    <a href="#home" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">🏠 Home</a>
+                    <a href="#about" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">👤 Profile</a>
+                    <a href="#education" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">🎓 Education</a>
+                    <a href="#practice" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">⚖️ Practice Areas</a>
+                    <a href="#services" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">🛡️ Services</a>
+                    <a href="#achievements" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">🏆
+                        Achievements</a>
+                    <a href="#testimonials" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">💬
+                        Testimonials</a>
+                    <a href="#faqs" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">❓ FAQs</a>
+                    <a href="#contact" class="py-2 hover:bg-gray-100 px-3 rounded-lg transition">📞 Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION | Fully responsive typography & layout -->
+    <section id="home" class="min-h-screen flex flex-col justify-center pt-28 md:pt-32 bg-white">
+        <div
+            class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+            <div data-aos="fade-up" class="space-y-6 md:space-y-8">
+                <div
+                    class="inline-flex items-center gap-x-2 px-4 py-2 border border-gray-300 rounded-full text-xs sm:text-sm tracking-wider text-gray-700">
+                    RAJASTHAN HIGH COURT • SENIOR ADVOCATE</div>
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight heading-font tracking-tighter text-black">
+                    LEGACY.<br>STRATEGY.<br>JUSTICE.</h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-lg">15+ years of distinguished courtroom excellence in
+                    Cyber Law, Criminal Defense & Civil Litigation.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="smoothScroll('contact')"
+                        class="bg-black text-white px-6 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg flex items-center gap-2 font-semibold hover:bg-gray-800 transition"><i
+                            class="fa-regular fa-calendar"></i> Free Consultation</button>
+                    <a href="https://wa.me/918890318188" target="_blank"
+                        class="border border-black px-6 md:px-8 py-4 md:py-5 rounded-full text-base md:text-lg flex items-center gap-2 hover:bg-black hover:text-white transition"><i
+                            class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <div class="flex gap-8 md:gap-12 pt-4">
+                    <div>
+                        <div class="text-3xl md:text-5xl font-bold">15+</div>
+                        <div class="text-gray-500 text-xs md:text-sm">YEARS EXP.</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-5xl font-bold">1000+</div>
+                        <div class="text-gray-500 text-xs md:text-sm">CASES</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-5xl font-bold">97%</div>
+                        <div class="text-gray-500 text-xs md:text-sm">SUCCESS</div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left" class="relative flex justify-center">
+                <img src="./assest/law_img.jpg" alt="Adv. Sadhu Ram Yadav"
+                    class="w-full max-w-md lg:max-w-full rounded-3xl shadow-2xl border border-gray-200 object-cover"
+                    onerror="this.src='https://placehold.co/600x500?text=Advocate+Chamber'">
+                <div
+                    class="absolute -bottom-4 -right-4 bg-white border border-gray-300 px-4 py-2 md:px-6 md:py-3 rounded-xl text-xs md:text-sm">
+                    BAR COUNCIL OF RAJASTHAN</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION (light gray) -->
+    <section id="about" class="py-16 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div data-aos="fade-right" class="flex justify-center">
+                    <div class="advocate-image-container inline-block w-full max-w-sm md:max-w-md">
+                        <img src="./assest/adv_img.png" alt="Legal Chamber - Adv. Sadhu Ram Yadav"
+                            class="w-full h-auto object-cover"
+                            onerror="this.src='https://placehold.co/500x600?text=Adv.+Sadhu+Ram+Yadav'">
+                        <div class="gavel-badge"><i class="fa-solid fa-gavel" style="color: white;"></i></div>
+                        <!-- Hammer icon added below -->
+
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="space-y-6">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl heading-font font-semibold text-black">Adv. Sadhu Ram
+                        Yadav</h2>
+                    <p class="text-xl md:text-2xl text-gray-700">Senior Advocate | Strategic Legal Counsel</p>
+                    <p class="text-gray-600 text-base md:text-lg leading-relaxed">With over 15 years of experience, Adv.
+                        Sadhu Ram Yadav is a trusted name before the Rajasthan High Court and district courts for
+                        matters involving Cyber Law, Criminal Defense, and Civil Litigation.</p>
+                    <div class="flex gap-4 pt-2">
+                        <div class="border-l-4 border-black pl-4">
+                            <p class="text-xs font-medium text-gray-500">RECOGNITION</p>
+                            <p class="font-semibold text-gray-800">Rajasthan High Court</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION - fully responsive timeline with improved mobile -->
+    <!-- EDUCATION & QUALIFICATIONS - Enhanced Timeline -->
+    <section id="education" class="py-16 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-4xl mb-3 inline-block">🎓</span>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl heading-font font-semibold text-black">
+                    Education & Qualifications
+                </h2>
+                <p class="text-gray-600 mt-4 max-w-md mx-auto">
+                    Academic foundation that shaped a distinguished legal career
+                </p>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="education-timeline max-w-4xl mx-auto">
+                <div class="space-y-12 md:space-y-20">
+                    <!-- Item 4: BA -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-3xl">🎓</span>
+                                <h3 class="text-2xl md:text-3xl font-semibold">Bachelor of Arts (B.A.)</h3>
+                            </div>
+                            <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
+                            <p class="text-sm text-gray-500 mt-1">First Division</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: MA -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-3xl">📖</span>
+                                <h3 class="text-2xl md:text-3xl font-semibold">Master of Arts (M.A.)</h3>
+                            </div>
+                            <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
+                            <p class="text-sm text-gray-500 mt-1">Political Science</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: B.Ed -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-3xl">🍎</span>
+                                <h3 class="text-2xl md:text-3xl font-semibold">Bachelor of Education (B.Ed)</h3>
+                            </div>
+                            <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
+                            <p class="text-sm text-gray-500 mt-1">Professional Teacher Training</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 1: LLB -->
+                    <div class="timeline-item" data-aos="fade-up">
+
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-3xl">⚖️</span>
+                                <h3 class="text-2xl md:text-3xl font-semibold">Bachelor of Laws (LL.B)</h3>
+                            </div>
+                            <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
+                            <p class="text-sm text-gray-500 mt-1">First Division with Distinction</p>
+                            <ul class="mt-4 space-y-1 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">• Specialized in Criminal & Constitutional Law</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- PRACTICE AREAS (3 cards stack responsively)-->
+    <section id="practice" class="py-16 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="text-center mb-12 md:mb-16"><span class="uppercase tracking-[3px] text-sm">CORE EXPERTISE</span>
+                <h2 class="text-4xl md:text-6xl heading-font font-semibold mt-3 text-black">Practice Areas</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="premium-card p-6 md:p-10 rounded-3xl text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
+                            class="fa-solid fa-laptop-code"></i></div>
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-4">Cyber Law</h3>
+                    <ul class="space-y-2 text-left text-gray-600">
+                        <li>› IT Act Violations & Cyber Fraud</li>
+                        <li>› Digital Arrest & Phishing Cases</li>
+                        <li>› Data Privacy & Technology Disputes</li>
+                    </ul>
+                </div>
+                <div class="premium-card p-6 md:p-10 rounded-3xl text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
+                            class="fa-solid fa-gavel"></i></div>
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-4">Criminal Law</h3>
+                    <ul class="space-y-2 text-left text-gray-600">
+                        <li>› FIR Quashing & Bail Applications</li>
+                        <li>› NDPS, POCSO & 498A Cases</li>
+                        <li>› Economic Offences & White Collar Crime</li>
+                    </ul>
+                </div>
+                <div class="premium-card p-6 md:p-10 rounded-3xl text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
+                            class="fa-solid fa-scale-balanced"></i></div>
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-4">Civil Litigation</h3>
+                    <ul class="space-y-2 text-left text-gray-600">
+                        <li>› Property & Partition Suits</li>
+                        <li>› Contract Enforcement & Disputes</li>
+                        <li>› Commercial & Corporate Matters</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-16 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="text-center mb-12"><span class="uppercase tracking-[3px] text-sm">PREMIUM OFFERINGS</span>
+                <h2 class="text-4xl md:text-6xl heading-font font-semibold mt-3">Elite Legal Services</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="premium-card p-8 rounded-3xl text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
+                            class="fa-solid fa-user-tie"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">Strategic Consultation</h3>
+                    <p class="text-gray-600">In-depth case analysis & courtroom strategy.</p>
+                </div>
+                <div class="premium-card p-8 rounded-3xl text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
+                            class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">Bail & Anticipatory Relief</h3>
+                    <p class="text-gray-600">Fast-track urgent applications with proven success.</p>
+                </div>
+                <div class="premium-card p-8 rounded-3xl text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
+                            class="fa-solid fa-shield-alt"></i></div>
+                    <h3 class="text-2xl font-semibold mb-3">Cyber Crime Defense</h3>
+                    <p class="text-gray-600">Expert defense in digital fraud & IT Act violations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="py-16 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="text-center mb-12"><span class="tracking-[3px] text-sm">TRACK RECORD</span>
+                <h2 class="text-4xl md:text-6xl heading-font font-semibold mt-3">Notable Achievements</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="premium-card p-8 text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-4xl mb-5"><i
+                            class="fa-solid fa-trophy"></i></div>
+                    <div class="achievement-number">1000+</div>
+                    <p class="text-gray-600 mt-2">Cases Resolved</p>
+                </div>
+                <div class="premium-card p-8 text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-4xl mb-5"><i
+                            class="fa-solid fa-gavel"></i></div>
+                    <div class="achievement-number">25+</div>
+                    <p class="text-gray-600 mt-2">Landmark Judgments</p>
+                </div>
+                <div class="premium-card p-8 text-center">
+                    <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-4xl mb-5"><i
+                            class="fa-solid fa-chart-line"></i></div>
+                    <div class="achievement-number">97%</div>
+                    <p class="text-gray-600 mt-2">Success Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS - Auto Scroll Right to Left -->
+    <section id="testimonials" class="py-16 md:py-28 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+            <h2 class="text-center text-4xl md:text-5xl heading-font font-semibold mb-12">Client Testimonials</h2>
+
+            <div class="testimonial-wrapper relative">
+                <div class="testimonial-track flex gap-6 animate-marquee">
+                    <!-- First set of testimonials -->
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Mastery in Cyber Law. Delivered exceptional results when it mattered most."
+                        </p>
+                        <div class="mt-5 font-bold">- Rahul Khandelwal</div>
+                    </div>
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Secured anticipatory bail in a sensitive matter swiftly. Outstanding."</p>
+                        <div class="mt-5 font-bold">- Vikram Singh</div>
+                    </div>
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Best senior advocate for property disputes. Resolved my case efficiently."
+                        </p>
+                        <div class="mt-5 font-bold">- Sunil Mehta</div>
+                    </div>
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Highly professional and deeply knowledgeable in criminal law."</p>
+                        <div class="mt-5 font-bold">- Pooja Sharma</div>
+                    </div>
+
+                    <!-- Duplicate set for seamless infinite loop -->
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Mastery in Cyber Law. Delivered exceptional results when it mattered most."
+                        </p>
+                        <div class="mt-5 font-bold">- Rahul Khandelwal</div>
+                    </div>
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Secured anticipatory bail in a sensitive matter swiftly. Outstanding."</p>
+                        <div class="mt-5 font-bold">- Vikram Singh</div>
+                    </div>
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Best senior advocate for property disputes. Resolved my case efficiently."
+                        </p>
+                        <div class="mt-5 font-bold">- Sunil Mehta</div>
+                    </div>
+                    <div class="premium-card p-6 rounded-2xl testimonial-card flex-shrink-0">
+                        <p class="italic">"Highly professional and deeply knowledgeable in criminal law."</p>
+                        <div class="mt-5 font-bold">- Pooja Sharma</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Fully responsive form & details) -->
+    <section id="contact" class="py-16 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="contact-grid-fix">
+                <div>
+                    <h2 class="text-4xl md:text-5xl heading-font font-semibold mb-5">Get In Touch</h2>
+                    <p class="text-gray-600 text-lg">First consultation is free and confidential.</p>
+                    <div class="mt-10 space-y-8"><a href="tel:8890318188" class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 border border-gray-300 flex items-center justify-center text-2xl rounded-xl">
+                                📞</div>
+                            <div>
+                                <div class="text-xs text-gray-500">PHONE / WHATSAPP</div>
+                                <div class="text-xl md:text-2xl font-semibold">+91 88903 18188</div>
+                            </div>
+                        </a>
+                        <a href="mailto:advsadhuyadav@gmail.com" class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 border border-gray-300 flex items-center justify-center text-2xl rounded-xl">
+                                @</div>
+                            <div>
+                                <div class="text-xs text-gray-500">EMAIL</div>
+                                <div class="text-lg md:text-xl">advsadhuyadav@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Session+Court+%26+District+Courts+Rajasthan"
+                            target="_blank" class="flex items-center gap-5">
+                            <div
+                                class="w-14 h-14 border border-gray-300 flex items-center justify-center text-2xl rounded-xl">
+                                📍</div>
+                            <div>
+                                <div class="text-xs text-gray-500">LOCATION</div>
+                                <div class="text-base md:text-xl">Session Court & District Courts, Rajasthan</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="premium-card p-6 md:p-10 rounded-3xl">
+                    <h3 class="text-2xl font-semibold mb-6">Request a Callback</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5"><input type="text"
+                            placeholder="Full Name" required
+                            class="w-full border border-gray-300 px-5 py-3 rounded-xl outline-none focus:border-black">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><input type="tel" placeholder="Phone"
+                                required class="border border-gray-300 px-5 py-3 rounded-xl"><input type="email"
+                                placeholder="Email" class="border border-gray-300 px-5 py-3 rounded-xl"></div><textarea
+                            placeholder="Brief description of your case..." rows="4" required
+                            class="w-full border border-gray-300 px-5 py-3 rounded-xl"></textarea><button type="submit"
+                            class="bg-black text-white w-full py-4 rounded-xl text-lg font-semibold hover:bg-gray-800">SEND
+                            REQUEST</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION - Enhanced Design -->
+    <section id="faqs" class="py-16 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <span
+                    class="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-xs font-semibold tracking-wider text-gray-600 mb-4">FAQ</span>
+                <h2 class="text-4xl md:text-6xl heading-font font-semibold text-black">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="faq-container">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">How soon can I get an
+                                    appointment?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    Urgent matters are scheduled within 24-48 hours. We offer same-day consultations for
+                                    emergency cases like anticipatory bail, cyber fraud, and criminal matters requiring
+                                    immediate attention.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">Do you offer virtual
+                                    consultations?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    Yes, we provide secure virtual consultations via Zoom, Google Meet, or WhatsApp
+                                    video calls for remote clients. This is especially convenient for clients outside
+                                    Rajasthan or those with mobility constraints.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">What documents should I
+                                    bring?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    Please bring all relevant documents including FIR copies, legal notices, contracts,
+                                    court orders, property papers, digital evidence, ID proof, and any correspondence
+                                    related to your case.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">Is the first consultation
+                                    free?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    Yes, the initial consultation is completely free and confidential. We believe in
+                                    providing accessible legal guidance to everyone who needs it.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">What are your fees
+                                    structure?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    Our fee structure is transparent and discussed upfront. We offer fixed fees for
+                                    specific matters, retainer arrangements for ongoing cases, and flexible payment
+                                    options. Contact us for a personalized quote.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">Which courts do you
+                                    practice in?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    We practice across Rajasthan including Rajasthan High Court (Jaipur), District
+                                    Courts, and Sessions Courts. We also handle matters in Supreme Court and various
+                                    tribunals.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">How long does a typical
+                                    case take?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    Case duration varies significantly based on complexity, court schedules, and case
+                                    type. Simple matters may resolve in weeks, while complex litigation can take months
+                                    or years. We provide realistic timelines during consultation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="450">
+                        <div class="premium-card rounded-2xl overflow-hidden transition-all duration-300">
+                            <button
+                                class="faq-question w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                                <span class="text-lg md:text-xl font-semibold text-gray-800">Can you handle urgent
+                                    matters?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                                <div class="px-6 pb-6 text-gray-600">
+                                    Absolutely. We prioritize urgent matters including anticipatory bail, cyber crime
+                                    complaints, criminal cases, and injunction orders. Contact us immediately for
+                                    time-sensitive legal issues.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Enhanced FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.fa-chevron-down');
+
+                question.addEventListener('click', () => {
+                    const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.style.maxHeight = '0px';
+                    });
+                    document.querySelectorAll('.fa-chevron-down').forEach(i => {
+                        i.style.transform = 'rotate(0deg)';
+                    });
+
+                    // Toggle current
+                    if (!isOpen) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white text-black rounded-xl flex items-center justify-center text-2xl font-bold">
+                            SY</div>
+                        <div class="text-xl md:text-2xl font-semibold heading-font">Adv. Sadhu Ram Yadav</div>
+                    </div>
+                    <p class="text-gray-400 max-w-md">Senior Advocate & Legal Consultant. Cyber Law, Criminal Law &
+                        Civil Law across Rajasthan.</p>
+                </div>
+                <div class="md:text-right">
+                    <div class="flex md:justify-end gap-5 text-lg mb-6"><a href="https://wa.me/918890318188"
+                            class="hover:underline">WhatsApp</a><a href="mailto:advsadhuyadav@gmail.com"
+                            class="hover:underline">Mail</a><a href="tel:8890318188" class="hover:underline">Call</a>
+                    </div>
+                    <p class="text-gray-500 text-sm">© 2026 Adv. Sadhu Ram Yadav. All rights reserved.<br>Bar Council of
+                        Rajasthan</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918890318188" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-xl hover:scale-110 transition z-50"><i
+            class="fa-brands fa-whatsapp"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+        // dropdown desktop
+        const menuBtn = document.getElementById('menuBtn');
+        const dropdown = document.getElementById('dropdownMenu');
+        const chevron = document.getElementById('chevron');
+        if (menuBtn) menuBtn.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('hidden'); if (chevron) chevron.style.transform = dropdown.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'; });
+        document.addEventListener('click', () => { if (dropdown && !dropdown.classList.contains('hidden')) dropdown.classList.add('hidden'); if (chevron) chevron.style.transform = 'rotate(0deg)'; });
+        document.querySelectorAll('#dropdownMenu a').forEach(link => link.addEventListener('click', () => dropdown.classList.add('hidden')));
+        function smoothScroll(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            // Get form fields
+            const form = e.target;
+            const name = form.querySelector('input[type="text"]').value;
+            const phone = form.querySelector('input[type="tel"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const message = form.querySelector('textarea').value;
+            // Build WhatsApp message
+            const waMsg =
+                `Contact Request from Website:%0A` +
+                `Name: ${encodeURIComponent(name)}%0A` +
+                `Phone: ${encodeURIComponent(phone)}%0A` +
+                (email ? `Email: ${encodeURIComponent(email)}%0A` : '') +
+                `Message: ${encodeURIComponent(message)}`;
+            // WhatsApp number (with country code, no + or 00)
+            const waNumber = '918890318188';
+            const waUrl = `https://wa.me/${waNumber}?text=${waMsg}`;
+            window.open(waUrl, '_blank');
+            form.reset();
+        }
+        // mobile drawer improvements
+        const mobileToggle = document.getElementById('mobileMenuToggle');
+        const drawer = document.getElementById('mobileDrawer');
+        const closeDrawerBtn = document.getElementById('closeDrawer');
+        if (mobileToggle && drawer) {
+            mobileToggle.addEventListener('click', () => { drawer.classList.remove('hidden'); document.body.style.overflow = 'hidden'; });
+            const closeDrawer = () => { drawer.classList.add('hidden'); document.body.style.overflow = ''; };
+            closeDrawerBtn?.addEventListener('click', closeDrawer);
+            drawer.addEventListener('click', (e) => { if (e.target === drawer) closeDrawer(); });
+            drawer.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDrawer));
+        }
+    </script>
+
+</body>
+
+</html>
