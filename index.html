@@ -27,29 +27,58 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #ffffff;
             color: #1f2937;
             overflow-x: hidden;
             width: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
         }
 
         .heading-font {
             font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .premium-card {
-            background: #f8fafc;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
             border: 1px solid #e2e8f0;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             height: 100%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .premium-card:hover::before {
+            left: 100%;
         }
 
         .premium-card:hover {
             border-color: #64748b;
-            transform: translateY(-8px);
-            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
         }
 
         .icon-circle {
@@ -66,9 +95,10 @@
         }
 
         .nav {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .achievement-number {
@@ -99,11 +129,16 @@
         .advocate-image-container {
             position: relative;
             border: 4px solid #1e2937;
-            border-radius: 1.5rem;
-            background: #fff;
-            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            border-radius: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 20px -5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             max-width: 100%;
+        }
+
+        .advocate-image-container:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3), 0 15px 30px -5px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
 
         .advocate-image-container img {
@@ -127,7 +162,12 @@
             font-size: 1.9rem;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
             border: 3px solid white;
-            transition: transform 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gavel-badge:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
         /* Education Timeline - fully responsive with connected dots */
@@ -270,18 +310,32 @@
         }
 
         .timeline-content {
-            background: #f8fafc;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
             border: 1px solid #e2e8f0;
-            border-radius: 1rem;
-            padding: 1.5rem;
+            border-radius: 1.5rem;
+            padding: 2rem;
             flex: 1;
             max-width: 400px;
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e2937, #64748b, #1e2937);
+            border-radius: 1.5rem 1.5rem 0 0;
         }
 
         .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
             border-color: #64748b;
         }
 
@@ -423,6 +477,66 @@
             gap: 1.5rem;
         }
 
+        /* Premium button styles */
+        .premium-btn {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid transparent;
+        }
+
+        .premium-btn:hover {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .outline-btn {
+            border: 2px solid #1e2937;
+            background: transparent;
+            color: #1e2937;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .outline-btn:hover {
+            background: #1e2937;
+            color: white;
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Law-themed background patterns */
+        .law-bg-light {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e2e8f0' stroke-width='1' opacity='0.03'%3E%3Cpath d='M50 20 L40 50 L60 50 Z'/%3E%3Cpath d='M30 60 L25 70 L35 70 Z'/%3E%3Cpath d='M70 60 L65 70 L75 70 Z'/%3E%3Cpath d='M50 30 L45 40 L55 40 Z'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 150px 150px;
+        }
+
+        .law-bg-dark {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23cbd5e1' stroke-width='1' opacity='0.05'%3E%3Cg transform='translate(10,10)'%3E%3Cpath d='M0 0 L5 10 L10 0 Z'/%3E%3C/g%3E%3Cg transform='translate(60,20)'%3E%3Cpath d='M0 0 L5 10 L10 0 Z'/%3E%3C/g%3E%3Cg transform='translate(30,50)'%3E%3Ccircle cx='5' cy='5' r='3'/%3E%3C/g%3E%3Cg transform='translate(70,60)'%3E%3Crect x='0' y='0' width='8' height='12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 120px 120px;
+        }
+
+        /* Cool heading styling */
+        .cool-heading {
+            background: linear-gradient(135deg, #1e2937 0%, #64748b 50%, #1e2937 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .cool-heading:hover {
+            background: linear-gradient(135deg, #64748b 0%, #1e2937 50%, #64748b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .testimonial-wrapper {
             overflow: hidden;
             padding: 10px 0;
@@ -458,7 +572,7 @@
             <!-- desktop menu -->
             <div class="relative hidden md:block">
                 <button id="menuBtn"
-                    class="flex items-center gap-x-2 px-5 py-2.5 border border-black hover:bg-black hover:text-white rounded-full text-sm font-semibold transition-all">
+                    class="flex items-center gap-x-2 px-5 py-2.5 border border-black hover:bg-black hover:text-white rounded-full text-sm font-semibold transition-all duration-300 ease-in-out">
                     <span>Menu</span>
                     <i class="fa-solid fa-chevron-down text-xs transition-transform" id="chevron"></i>
                 </button>
@@ -522,10 +636,10 @@
                     Cyber Law, Criminal Defense & Civil Litigation.</p>
                 <div class="flex flex-wrap gap-4">
                     <button onclick="smoothScroll('contact')"
-                        class="bg-black text-white px-6 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg flex items-center gap-2 font-semibold hover:bg-gray-800 transition"><i
+                        class="premium-btn text-white px-6 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg flex items-center gap-2 font-semibold"><i
                             class="fa-regular fa-calendar"></i> Free Consultation</button>
                     <a href="https://wa.me/918890318188" target="_blank"
-                        class="border border-black px-6 md:px-8 py-4 md:py-5 rounded-full text-base md:text-lg flex items-center gap-2 hover:bg-black hover:text-white transition"><i
+                        class="outline-btn px-6 md:px-8 py-4 md:py-5 rounded-full text-base md:text-lg flex items-center gap-2"><i
                             class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 </div>
                 <div class="flex gap-8 md:gap-12 pt-4">
@@ -555,7 +669,7 @@
     </section>
 
     <!-- ABOUT SECTION (light gray) -->
-    <section id="about" class="py-16 md:py-28 bg-gray-50">
+    <section id="about" class="py-16 md:py-28 bg-gray-50 law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div data-aos="fade-right" class="flex justify-center">
@@ -569,7 +683,7 @@
                     </div>
                 </div>
                 <div data-aos="fade-left" class="space-y-6">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl heading-font font-semibold text-black">Adv. Sadhu Ram
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl heading-font font-semibold text-black" data-aos="fade-up">Adv. Sadhu Ram
                         Yadav</h2>
                     <p class="text-xl md:text-2xl text-gray-700">Senior Advocate | Strategic Legal Counsel</p>
                     <p class="text-gray-600 text-base md:text-lg leading-relaxed">With over 15 years of experience, Adv.
@@ -588,9 +702,9 @@
 
     <!-- EDUCATION - fully responsive timeline with improved mobile -->
     <!-- EDUCATION & QUALIFICATIONS - Enhanced Timeline -->
-    <section id="education" class="py-16 md:py-28 bg-white">
+    <section id="education" class="py-16 md:py-28 bg-white law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
-            <div class="text-center mb-12 md:mb-16">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
                 <span class="text-4xl mb-3 inline-block">🎓</span>
                 <h2 class="text-4xl sm:text-5xl md:text-6xl heading-font font-semibold text-black">
                     Education & Qualifications
@@ -607,10 +721,7 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="timeline-dot-wrapper"><span class="timeline-dot"></span></div>
                         <div class="timeline-content">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-3xl">🎓</span>
-                                <h3 class="text-2xl md:text-3xl font-semibold">Bachelor of Arts (B.A.)</h3>
-                            </div>
+                        <h3 class="text-2xl md:text-3xl cool-heading">Bachelor of Arts (B.A.)</h3>
                             <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
                             <p class="text-sm text-gray-500 mt-1">First Division</p>
                         </div>
@@ -620,10 +731,7 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="timeline-dot-wrapper"><span class="timeline-dot"></span></div>
                         <div class="timeline-content">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-3xl">📖</span>
-                                <h3 class="text-2xl md:text-3xl font-semibold">Master of Arts (M.A.)</h3>
-                            </div>
+                        <h3 class="text-2xl md:text-3xl cool-heading">Master of Arts (M.A.)</h3>
                             <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
                             <p class="text-sm text-gray-500 mt-1">Political Science</p>
                         </div>
@@ -633,10 +741,7 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-dot-wrapper"><span class="timeline-dot"></span></div>
                         <div class="timeline-content">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-3xl">🍎</span>
-                                <h3 class="text-2xl md:text-3xl font-semibold">Bachelor of Education (B.Ed)</h3>
-                            </div>
+                        <h3 class="text-2xl md:text-3xl cool-heading">Bachelor of Education (B.Ed)</h3>
                             <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
                             <p class="text-sm text-gray-500 mt-1">Professional Teacher Training</p>
                         </div>
@@ -646,10 +751,7 @@
                     <div class="timeline-item" data-aos="fade-up">
                         <div class="timeline-dot-wrapper"><span class="timeline-dot"></span></div>
                         <div class="timeline-content">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-3xl">⚖️</span>
-                                <h3 class="text-2xl md:text-3xl font-semibold">Bachelor of Laws (LL.B)</h3>
-                            </div>
+                        <h3 class="text-2xl md:text-3xl cool-heading">Bachelor of Laws (LL.B)</h3>
                             <p class="font-medium text-gray-800">University of Rajasthan, Jaipur</p>
                             <p class="text-sm text-gray-500 mt-1">First Division with Distinction</p>
                             <ul class="mt-4 space-y-1 text-sm text-gray-600">
@@ -665,13 +767,13 @@
     </section>
 
     <!-- PRACTICE AREAS (3 cards stack responsively)-->
-    <section id="practice" class="py-16 md:py-28 bg-gray-50">
+    <section id="practice" class="py-16 md:py-28 bg-gray-50 law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
-            <div class="text-center mb-12 md:mb-16"><span class="uppercase tracking-[3px] text-sm">CORE EXPERTISE</span>
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up"><span class="uppercase tracking-[3px] text-sm">CORE EXPERTISE</span>
                 <h2 class="text-4xl md:text-6xl heading-font font-semibold mt-3 text-black">Practice Areas</h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="premium-card p-6 md:p-10 rounded-3xl text-center">
+                <div class="premium-card p-6 md:p-10 rounded-3xl text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
                             class="fa-solid fa-laptop-code"></i></div>
                     <h3 class="text-2xl md:text-3xl font-semibold mb-4">Cyber Law</h3>
@@ -681,7 +783,7 @@
                         <li>› Data Privacy & Technology Disputes</li>
                     </ul>
                 </div>
-                <div class="premium-card p-6 md:p-10 rounded-3xl text-center">
+                <div class="premium-card p-6 md:p-10 rounded-3xl text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
                             class="fa-solid fa-gavel"></i></div>
                     <h3 class="text-2xl md:text-3xl font-semibold mb-4">Criminal Law</h3>
@@ -691,7 +793,7 @@
                         <li>› Economic Offences & White Collar Crime</li>
                     </ul>
                 </div>
-                <div class="premium-card p-6 md:p-10 rounded-3xl text-center">
+                <div class="premium-card p-6 md:p-10 rounded-3xl text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
                             class="fa-solid fa-scale-balanced"></i></div>
                     <h3 class="text-2xl md:text-3xl font-semibold mb-4">Civil Litigation</h3>
@@ -706,25 +808,25 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="py-16 md:py-28 bg-white">
+    <section id="services" class="py-16 md:py-28 bg-white law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
-            <div class="text-center mb-12"><span class="uppercase tracking-[3px] text-sm">PREMIUM OFFERINGS</span>
+            <div class="text-center mb-12" data-aos="fade-up"><span class="uppercase tracking-[3px] text-sm">PREMIUM OFFERINGS</span>
                 <h2 class="text-4xl md:text-6xl heading-font font-semibold mt-3">Elite Legal Services</h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="premium-card p-8 rounded-3xl text-center">
+                <div class="premium-card p-8 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
                             class="fa-solid fa-user-tie"></i></div>
                     <h3 class="text-2xl font-semibold mb-3">Strategic Consultation</h3>
                     <p class="text-gray-600">In-depth case analysis & courtroom strategy.</p>
                 </div>
-                <div class="premium-card p-8 rounded-3xl text-center">
+                <div class="premium-card p-8 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
                             class="fa-solid fa-hand-holding-heart"></i></div>
                     <h3 class="text-2xl font-semibold mb-3">Bail & Anticipatory Relief</h3>
                     <p class="text-gray-600">Fast-track urgent applications with proven success.</p>
                 </div>
-                <div class="premium-card p-8 rounded-3xl text-center">
+                <div class="premium-card p-8 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-5xl mb-6"><i
                             class="fa-solid fa-shield-alt"></i></div>
                     <h3 class="text-2xl font-semibold mb-3">Cyber Crime Defense</h3>
@@ -735,25 +837,25 @@
     </section>
 
     <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="py-16 md:py-28 bg-gray-50">
+    <section id="achievements" class="py-16 md:py-28 bg-gray-50 law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
-            <div class="text-center mb-12"><span class="tracking-[3px] text-sm">TRACK RECORD</span>
+            <div class="text-center mb-12" data-aos="fade-up"><span class="tracking-[3px] text-sm">TRACK RECORD</span>
                 <h2 class="text-4xl md:text-6xl heading-font font-semibold mt-3">Notable Achievements</h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="premium-card p-8 text-center">
+                <div class="premium-card p-8 text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-4xl mb-5"><i
                             class="fa-solid fa-trophy"></i></div>
                     <div class="achievement-number">1000+</div>
                     <p class="text-gray-600 mt-2">Cases Resolved</p>
                 </div>
-                <div class="premium-card p-8 text-center">
+                <div class="premium-card p-8 text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-4xl mb-5"><i
                             class="fa-solid fa-gavel"></i></div>
                     <div class="achievement-number">25+</div>
                     <p class="text-gray-600 mt-2">Landmark Judgments</p>
                 </div>
-                <div class="premium-card p-8 text-center">
+                <div class="premium-card p-8 text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon-circle mx-auto rounded-2xl flex items-center justify-center text-4xl mb-5"><i
                             class="fa-solid fa-chart-line"></i></div>
                     <div class="achievement-number">97%</div>
@@ -764,9 +866,9 @@
     </section>
 
     <!-- TESTIMONIALS - Auto Scroll Right to Left -->
-    <section id="testimonials" class="py-16 md:py-28 bg-white overflow-hidden">
+    <section id="testimonials" class="py-16 md:py-28 bg-white overflow-hidden law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6">
-            <h2 class="text-center text-4xl md:text-5xl heading-font font-semibold mb-12">Client Testimonials</h2>
+            <h2 class="text-center text-4xl md:text-5xl heading-font font-semibold mb-12" data-aos="fade-up">Client Testimonials</h2>
 
             <div class="testimonial-wrapper relative">
                 <div class="testimonial-track flex gap-6 animate-marquee">
@@ -815,11 +917,11 @@
     </section>
 
     <!-- CONTACT SECTION (Fully responsive form & details) -->
-    <section id="contact" class="py-16 md:py-28 bg-gray-50">
+    <section id="contact" class="py-16 md:py-28 bg-gray-50 law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
             <div class="contact-grid-fix">
-                <div>
-                    <h2 class="text-4xl md:text-5xl heading-font font-semibold mb-5">Get In Touch</h2>
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl heading-font font-semibold mb-5" data-aos="fade-up">Get In Touch</h2>
                     <p class="text-gray-600 text-lg">First consultation is free and confidential.</p>
                     <div class="mt-10 space-y-8"><a href="tel:8890318188" class="flex items-center gap-5">
                             <div
@@ -851,7 +953,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="premium-card p-6 md:p-10 rounded-3xl">
+                <div class="premium-card p-6 md:p-10 rounded-3xl" data-aos="fade-left">
                     <h3 class="text-2xl font-semibold mb-6">Request a Callback</h3>
                     <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5"><input type="text"
                             placeholder="Full Name" required
@@ -861,7 +963,7 @@
                                 placeholder="Email" class="border border-gray-300 px-5 py-3 rounded-xl"></div><textarea
                             placeholder="Brief description of your case..." rows="4" required
                             class="w-full border border-gray-300 px-5 py-3 rounded-xl"></textarea><button type="submit"
-                            class="bg-black text-white w-full py-4 rounded-xl text-lg font-semibold hover:bg-gray-800">SEND
+                            class="premium-btn text-white w-full py-4 rounded-xl text-lg font-semibold">SEND
                             REQUEST</button>
                     </form>
                 </div>
@@ -870,7 +972,7 @@
     </section>
 
     <!-- FAQ ACCORDION - Enhanced Design -->
-    <section id="faqs" class="py-16 md:py-28 bg-white">
+    <section id="faqs" class="py-16 md:py-28 bg-white law-bg-light">
         <div class="max-w-7xl mx-auto px-5 sm:px-6 md:px-8">
             <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
                 <span
